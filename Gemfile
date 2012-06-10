@@ -37,3 +37,12 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+group :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'spork'
+end
