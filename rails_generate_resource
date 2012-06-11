@@ -1,0 +1,71 @@
+Usage:
+  rails generate resource NAME [field[:type][:index] field[:type][:index]] [options]
+
+Options:
+  -a, [--actions=ACTION ACTION]   # Actions for the resource controller
+  -o, --orm=NAME                  # Orm to be invoked
+                                  # Default: active_record
+      [--skip-namespace]          # Skip namespace (affects only isolated applications)
+      [--old-style-hash]          # Force using old style hash (:foo => 'bar') on Ruby >= 1.9
+  -c, --resource-controller=NAME  # Resource controller to be invoked
+                                  # Default: controller
+      [--force-plural]            # Forces the use of a plural ModelName
+      --resource-route            # Indicates when to generate resource route
+                                  # Default: true
+
+Rspec options:
+  [--fixture-replacement=NAME]  # Fixture replacement to be invoked
+  [--fixture]                   # Indicates when to generate fixture
+  [--controller-specs]          # Indicates when to generate controller specs
+                                # Default: true
+  [--view-specs]                # Indicates when to generate view specs
+                                # Default: true
+
+Controller options:
+      [--helper]                # Indicates when to generate helper
+                                # Default: true
+  -e, [--template-engine=NAME]  # Template engine to be invoked
+                                # Default: erb
+      [--assets]                # Indicates when to generate assets
+                                # Default: true
+
+Runtime options:
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+  -p, [--pretend]  # Run but do not make any changes
+  -q, [--quiet]    # Suppress status output
+
+ActiveRecord options:
+      [--parent=PARENT]        # The parent class for the generated model
+      [--timestamps]           # Indicates when to generate timestamps
+                               # Default: true
+      [--indexes]              # Add indexes for references and belongs_to columns
+                               # Default: true
+  -t, [--test-framework=NAME]  # Test framework to be invoked
+                               # Default: rspec
+      [--migration]            # Indicates when to generate migration
+                               # Default: true
+
+Description:
+    Stubs out a new resource including an empty model and controller suitable
+    for a restful, resource-oriented application. Pass the singular model name,
+    either CamelCased or under_scored, as the first argument, and an optional
+    list of attribute pairs.
+
+    Attribute pairs are field:type arguments specifying the
+    model's attributes. Timestamps are added by default, so you don't have to
+    specify them by hand as 'created_at:datetime updated_at:datetime'.
+
+    You don't have to think up every attribute up front, but it helps to
+    sketch out a few so you can start working with the model immediately.
+
+    This generator invokes your configured ORM and test framework, besides
+    creating helpers and add routes to config/routes.rb.
+
+    Unlike the scaffold generator, the resource generator does not create
+    views or add any methods to the generated controller.
+
+Examples:
+    `rails generate resource post` # no attributes
+    `rails generate resource post title:string body:text published:boolean`
+    `rails generate resource purchase order_id:integer amount:decimal`

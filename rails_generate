@@ -1,0 +1,51 @@
+Usage: rails generate GENERATOR [args] [options]
+
+General options:
+  -h, [--help]     # Print generator's options and usage
+  -p, [--pretend]  # Run but do not make any changes
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+  -q, [--quiet]    # Suppress status output
+
+Please choose a generator below.
+
+Rails:
+  assets
+  controller
+  generator
+  helper
+  integration_test
+  mailer
+  migration
+  model
+  observer
+  performance_test
+  resource
+  scaffold
+  scaffold_controller
+  session_migration
+  task
+
+Coffee:
+  coffee:assets
+
+Jquery:
+  jquery:install
+
+Js:
+  js:assets
+
+Rspec:
+  rspec:install
+
+TestUnit:
+  test_unit:controller
+  test_unit:helper
+  test_unit:integration
+  test_unit:mailer
+  test_unit:model
+  test_unit:observer
+  test_unit:performance
+  test_unit:plugin
+  test_unit:scaffold
+

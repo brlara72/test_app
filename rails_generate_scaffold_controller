@@ -1,0 +1,59 @@
+Usage:
+  rails generate scaffold_controller NAME [options]
+
+Options:
+      [--helper]                # Indicates when to generate helper
+                                # Default: true
+      [--skip-namespace]        # Skip namespace (affects only isolated applications)
+  -o, --orm=NAME                # ORM to generate the controller for
+                                # Default: active_record
+      [--old-style-hash]        # Force using old style hash (:foo => 'bar') on Ruby >= 1.9
+  -e, [--template-engine=NAME]  # Template engine to be invoked
+                                # Default: erb
+  -t, [--test-framework=NAME]   # Test framework to be invoked
+                                # Default: rspec
+      [--force-plural]          # Forces the use of a plural ModelName
+
+Runtime options:
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+  -p, [--pretend]  # Run but do not make any changes
+  -q, [--quiet]    # Suppress status output
+
+Rspec options:
+  [--view-specs]             # Generate view specs
+                             # Default: true
+  [--integration-tool=NAME]  # Integration tool to be invoked
+                             # Default: rspec
+  [--webrat]                 # Use webrat methods/matchers
+  [--singleton]              # Supply to create a singleton controller
+  [--webrat-matchers]        # Use webrat methods/matchers (deprecated - use --webrat)
+  [--helper-specs]           # Generate helper specs
+                             # Default: true
+  [--routing-specs]          # Generate routing specs
+                             # Default: true
+  [--controller-specs]       # Generate controller specs
+                             # Default: true
+  [--request-specs]          # Generate request specs
+                             # Default: true
+
+Description:
+    Stubs out a scaffolded controller and its views. Pass the model name,
+    either CamelCased or under_scored, and a list of views as arguments.
+    The controller name is retrieved as a pluralized version of the model
+    name.
+
+    To create a controller within a module, specify the model name as a
+    path like 'parent_module/controller_name'.
+
+    This generates a controller class in app/controllers and invokes helper,
+    template engine and test framework generators.
+
+Example:
+    `rails generate scaffold_controller CreditCard`
+
+    Credit card controller with URLs like /credit_card/debit.
+        Controller:      app/controllers/credit_cards_controller.rb
+        Functional Test: test/functional/credit_cards_controller_test.rb
+        Views:           app/views/credit_cards/index.html.erb [...]
+        Helper:          app/helpers/credit_cards_helper.rb

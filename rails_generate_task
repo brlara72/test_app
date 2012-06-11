@@ -1,0 +1,22 @@
+Usage:
+  rails generate task NAME [action action] [options]
+
+Options:
+  [--skip-namespace]  # Skip namespace (affects only isolated applications)
+  [--old-style-hash]  # Force using old style hash (:foo => 'bar') on Ruby >= 1.9
+
+Runtime options:
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+  -p, [--pretend]  # Run but do not make any changes
+  -q, [--quiet]    # Suppress status output
+
+Description:
+    Stubs out a new Rake task. Pass the namespace name, and a list of tasks as arguments.
+
+    This generates a task file in lib/tasks.
+
+Example:
+    `rails generate task feeds fetch erase add`
+
+        Task:      lib/tasks/feeds.rake
