@@ -1,0 +1,4 @@
+
+:: recover lost files ::
+git ls-files -d | xargs git checkout --
+
